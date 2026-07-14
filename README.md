@@ -212,7 +212,7 @@ Before running this project, ensure the following requirements are available:
 Clone the project repository from GitHub.
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/jeevan11jacob-svg/Enterprise-Linux-Infrastructure-Automation.git
 cd my_project
 ```
 
