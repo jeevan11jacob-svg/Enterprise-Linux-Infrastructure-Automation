@@ -1,0 +1,33 @@
+---
+- name: Common configuration
+  hosts: all
+  become: yes
+
+  roles:
+    - common
+    - users
+
+
+- name: Configure web servers
+  hosts: webservers
+  become: yes
+
+  roles:
+    - webserver
+
+
+- name: Configure database servers
+  hosts: databases
+  become: yes
+  
+  vars_files:
+    - secrets.yml  
+  roles:
+    - database
+
+- name: Configure Backup
+  hosts: all
+  become: yes
+
+  roles:
+    - backup      

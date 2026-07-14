@@ -1,0 +1,6 @@
+---
+# defaults file for roles/users
+users:
+  - devops
+  - developer
+  - tester

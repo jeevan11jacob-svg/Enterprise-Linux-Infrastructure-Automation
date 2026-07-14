@@ -1,0 +1,8 @@
+[webservers]
+192.168.33.122
+
+[databases]
+192.168.33.102
+
+[all:vars]
+ansible_user=ansible

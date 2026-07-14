@@ -1,0 +1,5 @@
+#!/bin/bash
+
+tar -czf {{ backup_dir }}/{{ backup_file }} {{ backup_source }}
+
+echo "Backup completed successfully on $(date)"

@@ -1,0 +1,7 @@
+---
+# tasks file for roles/users
+- name: Create users
+  user:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ users }}"

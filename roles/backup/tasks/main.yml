@@ -1,0 +1,30 @@
+---
+# tasks file for roles/backup
+
+- name: Install backup dependency
+  dnf:
+    name: tar
+    state: present
+
+- name: Create backup directory
+  file:
+    path: "{{ backup_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy backup script
+  template:
+    src: backup.sh.j2
+    dest: /usr/local/bin/backup.sh
+    mode: '0755'
+
+- name: Run initial backup
+  command: /usr/local/bin/backup.sh
+
+- name: Schedule daily backup
+  cron:
+    name: "Daily System Backup"
+    minute: "0"
+    hour: "2"
+    user: root
+    job: "/usr/local/bin/backup.sh"

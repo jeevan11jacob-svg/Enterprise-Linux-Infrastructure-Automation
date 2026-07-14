@@ -1,0 +1,5 @@
+---
+# defaults file for roles/backup
+backup_dir: /backup
+backup_source: /etc
+backup_file: etc_backup.tar.gz
